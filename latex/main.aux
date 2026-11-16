@@ -1,0 +1,89 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{filament-segmentation-2026}
+\citation{ahmadzadeh2024dataset}
+\citation{ahmadzadeh2019filament_arxiv,solomon2025edgeattnet}
+\citation{ahmadzadeh2019filament_arxiv}
+\citation{solomon2025edgeattnet}
+\citation{silso}
+\citation{solomon2025edgeattnet}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{1}{section.2}\protected@file@percent }
+\newlabel{sec:methodology}{{2}{1}{Methodology}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Data Splitting}{1}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:splitting}{{2.1}{1}{Data Splitting}{subsection.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Distribution of solar-cycle phases in the training and validation splits.}}{1}{table.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:phase}{{1}{1}{Distribution of solar-cycle phases in the training and validation splits}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Preprocessing}{1}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:preprocessing}{{2.2}{1}{Preprocessing}{subsection.2.2}{}}
+\citation{he2016deep}
+\citation{ronneberger2015unetconvolutionalnetworksbiomedical,solomon2025edgeattnet}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Preprocessing operations and their corresponding parameters.}}{2}{table.caption.4}\protected@file@percent }
+\newlabel{tab:preprocessing}{{2}{2}{Preprocessing operations and their corresponding parameters}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Network Architecture}{2}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:architecture}{{2.3}{2}{Network Architecture}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Kirsch Filters}{2}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Orientation Field Extractor}{2}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Orientation field extracted at the first scale (dilation equals one), shown over a crop around a predicted filament. The field is block-averaged ($4\times 4$) for display. Each arrow gives the local edge orientation. Arrow length and color encode the edge magnitude.}}{2}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:vector_field}{{1}{2}{Orientation field extracted at the first scale (dilation equals one), shown over a crop around a predicted filament. The field is block-averaged ($4\times 4$) for display. Each arrow gives the local edge orientation. Arrow length and color encode the edge magnitude}{figure.caption.5}{}}
+\citation{lightlytrain}
+\citation{hu2026modernconvnetsolarfilament}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Compass Attention}{3}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Compass Attention diagram.}}{3}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:bottleneck}{{2}{3}{Compass Attention diagram}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Orientation Conditioning}{3}{subsubsection.2.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Training}{3}{subsection.2.4}\protected@file@percent }
+\newlabel{sec:training}{{2.4}{3}{Training}{subsection.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Self-supervised pretraining}{3}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Supervised training}{3}{subsubsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Augmentations}{3}{subsubsection.2.4.3}\protected@file@percent }
+\citation{hu2026modernconvnetsolarfilament}
+\citation{akiba2019optuna}
+\citation{lightlytrain}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Augmentation parameters.}}{4}{table.caption.7}\protected@file@percent }
+\newlabel{tab:augmentation}{{3}{4}{Augmentation parameters}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Postprocessing}{4}{subsection.2.5}\protected@file@percent }
+\newlabel{sec:postprocessing}{{2.5}{4}{Postprocessing}{subsection.2.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Evaluation}{4}{section.3}\protected@file@percent }
+\newlabel{sec:evaluation}{{3}{4}{Evaluation}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Evaluation Strategy}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Benchmarks}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Self-Supervised Learning}{4}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Validation performance of backbone pretraining.}}{4}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:results}{{3}{4}{Validation performance of backbone pretraining}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Qualitative results on validation image. From left to right: input image, mask predicted by the model, combined annotations from all annotators, and the consensus region on which the annotators agree.}}{4}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:comparison}{{4}{4}{Qualitative results on validation image. From left to right: input image, mask predicted by the model, combined annotations from all annotators, and the consensus region on which the annotators agree}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Supervised Learning}{4}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance comparison on the validation set.}}{4}{table.caption.10}\protected@file@percent }
+\newlabel{tab:competition}{{4}{4}{Performance comparison on the validation set}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Final Model}{4}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Acknowledgment}{4}{section.4}\protected@file@percent }
+\newlabel{sec:acknowledgment}{{4}{4}{Acknowledgment}{section.4}{}}
+\bibstyle{ACM-Reference-Format}
+\bibdata{main}
+\bibcite{ahmadzadeh2024dataset}{{1}{2024}{{{Ahmadzadeh} et~al\mbox  {.}}}{{}}}
+\bibcite{filament-segmentation-2026}{{2}{2026}{{Ahmadzadeh et~al\mbox  {.}}}{{}}}
+\bibcite{ahmadzadeh2019filament_arxiv}{{3}{2019}{{Ahmadzadeh et~al\mbox  {.}}}{{}}}
+\bibcite{akiba2019optuna}{{4}{2019}{{Akiba et~al\mbox  {.}}}{{}}}
+\bibcite{he2016deep}{{5}{2016}{{He et~al\mbox  {.}}}{{}}}
+\bibcite{hu2026modernconvnetsolarfilament}{{6}{2026}{{Hu et~al\mbox  {.}}}{{}}}
+\bibcite{lightlytrain}{{7}{2024}{{Lightly AG}}{{}}}
+\bibcite{ronneberger2015unetconvolutionalnetworksbiomedical}{{8}{2015}{{Ronneberger et~al\mbox  {.}}}{{}}}
+\bibcite{silso}{{9}{0000}{{SILSO World Data Center}}{{}}}
+\bibcite{solomon2025edgeattnet}{{10}{2025}{{Solomon et~al\mbox  {.}}}{{}}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{4.185pt}
+\newlabel{tocindent2}{10.34999pt}
+\newlabel{tocindent3}{16.51498pt}
+\newlabel{tocindent4}{0pt}
+\newlabel{tocindent5}{0pt}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Configuration and hyperparameters of the final submitted model.}}{5}{table.caption.11}\protected@file@percent }
+\newlabel{tab:params}{{5}{5}{Configuration and hyperparameters of the final submitted model}{table.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{References}{5}{section*.13}\protected@file@percent }
+\newlabel{TotPages}{{5}{5}{}{page.5}{}}
+\gdef \@abspage@last{5}
