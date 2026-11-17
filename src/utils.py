@@ -66,7 +66,7 @@ def solar_disk_detection(img):
 
     if not candidates:
         return width/2, height/2, min(width, height)*0.45
-        
+
     _, x, y, r, _ = max(candidates, key=lambda c: c[0])
 
     scale_x = width/256
@@ -80,13 +80,13 @@ def solar_disk_detection(img):
 
 def disk_masking(height, width, center_x, center_y, radius):
     Y, X = np.ogrid[:height, :width]
-    mask = np.hypot(X - center_x, Y - center_y) <= radius 
-    
+    mask = np.hypot(X - center_x, Y - center_y) <= radius
+
     return mask
 
 def radial_flattening(img, center_x, center_y, radius, mask, window_size=21):
     height, width = img.shape
-    
+
     Y, X = np.ogrid[:height, :width]
     dist = np.hypot(X - center_x, Y - center_y)
     dist = dist.astype(np.int32)
@@ -98,16 +98,16 @@ def radial_flattening(img, center_x, center_y, radius, mask, window_size=21):
     masked_values = img[mask].astype(np.float64)
 
     ring_sums = np.bincount(
-        masked_ring_index, 
-        weights=masked_values, 
+        masked_ring_index,
+        weights=masked_values,
         minlength=radius + 1
     )
-    
+
     ring_counts = np.bincount(
-        masked_ring_index, 
+        masked_ring_index,
         minlength=radius + 1
     ).astype(np.float64)
-    
+
     radial_profile = (
         ring_sums/np.maximum(ring_counts, 1)
     ).astype(np.float32)
@@ -127,23 +127,23 @@ def radial_flattening(img, center_x, center_y, radius, mask, window_size=21):
 
     background = radial_profile[ring_index]
     reference = float(np.mean(radial_profile))
-    
+
     flattened = img * reference / np.maximum(background, 0.05)
     flattened = np.clip(flattened, 0, 1).astype(np.float32)
-    
+
     return flattened
 
 def clahe(img, mask, tileGridSize=(8, 8), clipLimit=2.0):
     img = np.where(mask, img, img[mask].mean())
     img = (np.clip(img, 0, 1)*255.0 + 0.5).astype(np.uint8)
-    
+
     clahe = cv2.createCLAHE(
-        clipLimit=clipLimit, 
+        clipLimit=clipLimit,
         tileGridSize=tileGridSize
     )
-    
+
     img = clahe.apply(img).astype(np.float32) / 255.0
-    
+
     return img
 
 def off_disk_zeroing(img, mask):
@@ -179,18 +179,18 @@ def read_image_metadata(path=CFG.metadata):
     annotations = pd.DataFrame(coco["annotations"])
 
     metadata = image_info.merge(annotations, left_on="id", right_on="image_id")[[
-        "file_name", 
-        "url", 
-        "date_captured", 
-        "segmentation", 
-        "area", 
-        "iscrowd", 
-        "spine", 
-        "image_id", 
-        "bbox", 
+        "file_name",
+        "url",
+        "date_captured",
+        "segmentation",
+        "area",
+        "iscrowd",
+        "spine",
+        "image_id",
+        "bbox",
         "category_id"
     ]]
-    
+
     metadata["date_captured"] = pd.to_datetime(metadata["date_captured"])
     metadata["month"] = metadata["date_captured"].dt.month
     metadata["year"] = metadata["date_captured"].dt.year
@@ -273,7 +273,7 @@ def audit_split(metadata, train_ids, val_ids, gap_days=30):
 
 
 def load_train_val(
-    silso_path="./data/SILSO.csv",
+    silso_path=CFG.silso,
     val_size=CFG.val_size,
     seed=CFG.seed,
     block_days=90,
@@ -306,7 +306,6 @@ def load_train_val(
 
     train = metadata[metadata["file_name"].isin(train_ids)]
     val = metadata[metadata["file_name"].isin(val_ids)]
-
     return train, val
 
 def collate_fn(batch):
@@ -400,7 +399,7 @@ def train_loop(
 ):
     if val_loss_fn is None:
         val_loss_fn = loss_fn
-        
+
     optimizer = set_optimizer(
         model=model,
         lr=lr,
@@ -481,7 +480,7 @@ def random_rotation(image, mask, max_angle=45.0):
     image = F.grid_sample(image.unsqueeze(0), grid, mode="bilinear", padding_mode="zeros", align_corners=False)[0]
     mask = F.grid_sample(mask.unsqueeze(0), grid, mode="nearest", padding_mode="zeros", align_corners=False)[0]
     return image, mask
-    
+
 def random_gamma(image, min_gamma=0.5, max_gamma=1.5):
     gamma = random.uniform(min_gamma, max_gamma)
     return torch.clamp(image, 0.0, 1.0) ** gamma
@@ -508,7 +507,7 @@ def TTA_predict(model, x):
             prob = torch.sigmoid(logits)
             prob = invert(prob, k, flip)
             total = total + prob
-            
+
     return total/8
 
 @torch.no_grad()
@@ -547,7 +546,7 @@ def clean_mask(prob, threshold=0.5, min_area=5):
     mask = (prob > threshold).astype(np.uint8)
     mask = fill_hole_and_denoise(mask, min_area)
     return mask
-    
+
 def score(
     probs,
     targets,
@@ -581,7 +580,7 @@ def score(
         "recall": recall.compute().item(),
         "f1": f1.compute().item(),
     }
-    
+
 # From https://github.com/irisaltHu/MORDEN/blob/main/segmentation/utils/post_processing/tools/hole_filling.py
 def fill_hole_and_denoise(mask, threshold=5):
     contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

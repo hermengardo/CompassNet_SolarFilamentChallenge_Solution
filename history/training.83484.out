@@ -1,0 +1,15 @@
+[GPU_POLICY_TEST] GPU=1 shards=12/32 MPS=37%
+Using device: cpu
+Train Set Distribution
+phase
+high        0.466245
+moderate    0.360759
+low         0.172996
+Name: proportion, dtype: float64
+
+Validation Set Distribution
+phase
+moderate    0.420732
+high        0.396341
+low         0.182927
+Name: proportion, dtype: float64

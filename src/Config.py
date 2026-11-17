@@ -14,9 +14,10 @@ class Config:
         "cuda" if torch.cuda.is_available() else "cpu"
     )
 
-    train = "/home/jaoliveira/not_related/data/supervised/magfilo/train/train_images"
-    test = "/home/jaoliveira/not_related/data/supervised/magfilo/test/test_images"
-    metadata = "/home/jaoliveira/not_related/data/supervised/magfilo/train/MAGFiLO_1.0_Annotations_kaggle2026_train.json"
+    train = "./data/supervised/magfilo/train/train_images"
+    test = "./data/supervised/magfilo/test/test_images"
+    metadata = "./data/supervised/magfilo/train/MAGFiLO_1.0_Annotations_kaggle2026_train.json"
+    silso = "./data/SILSO.csv"
 
     def __repr__(self) -> str:
         return f"""

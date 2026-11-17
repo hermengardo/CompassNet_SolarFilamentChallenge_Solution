@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.15)  16 NOV 2026 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.15)  16 NOV 2026 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,19 +999,30 @@ Package pdftex.def Info: images/boxplot_backbone.pdf  used on input line 275.
 
 Class acmart Warning: A possible image without description on input line 278.
 
-<images/grid.png, id=17683, 1721.9532pt x 430.2474pt>
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
+(Font)              scaled to size 8.0pt on input line 291.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
+(Font)              scaled to size 6.0pt on input line 291.
+<images/grid.png, id=17685, 1738.0935pt x 1296.5238pt>
 File: images/grid.png Graphic file (type png)
 <use images/grid.png>
-Package pdftex.def Info: images/grid.png  used on input line 286.
-(pdftex.def)             Requested size: 241.14749pt x 60.24734pt.
+Package pdftex.def Info: images/grid.png  used on input line 310.
+(pdftex.def)             Requested size: 241.14749pt x 179.87007pt.
 
-Class acmart Warning: A possible image without description on input line 289.
+Class acmart Warning: A possible image without description on input line 313.
 
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 8.0pt on input line 300.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 6.0pt on input line 300.
-[4.4 <./images/boxplot_backbone.pdf> <./images/grid.png>] (./main.bbl
+[4.4 <./images/boxplot_backbone.pdf> <./images/grid.png>]
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 338.
+ (/home/hermengardo/.TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 7.0pt on input line 338.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `zi4' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (./main.bbl
 LaTeX Info: Redefining \tempurl on input line 110.
 )
 
@@ -1031,35 +1042,35 @@ Class acmart Warning: ACM reference format is mandatory
 
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
 (/home/hermengardo/.TinyTeX/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/home/hermengardo/.TinyTeX/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5.5] (./main.aux)
+) [5.5{/home/hermengardo/.TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F218975D9DDA0F32A5ECABDAC3BDFC45;1701.
  ) 
 Here is how much of TeX's memory you used:
- 22034 strings out of 469097
- 362261 string characters out of 5457855
- 854878 words of memory out of 5000000
- 50024 multiletter control sequences out of 15000+600000
- 825560 words of font info for 401 fonts, out of 8000000 for 9000
+ 22061 strings out of 469097
+ 362748 string characters out of 5457855
+ 853193 words of memory out of 5000000
+ 50045 multiletter control sequences out of 15000+600000
+ 825868 words of font info for 402 fonts, out of 8000000 for 9000
  199 hyphenation exceptions out of 8191
- 89i,12n,131p,1001b,641s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txexs.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txsym.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (5 pages, 3905557 bytes).
+ 89i,13n,131p,1001b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/LibertineMathMI7.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/libertine/LinLibertineTZ.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txexs.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txsym.pfb></home/hermengardo/.TinyTeX/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (5 pages, 4199897 bytes).
 PDF statistics:
- 17855 PDF objects out of 18468 (max. 8388607)
- 11844 compressed objects within 119 object streams
+ 17860 PDF objects out of 18468 (max. 8388607)
+ 11848 compressed objects within 119 object streams
  56 named destinations out of 1000 (max. 500000)
- 114825 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 115337 words of extra memory for PDF output out of 128383 (max. 10000000)
 
