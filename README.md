@@ -1,7 +1,5 @@
 # CompassNet: Orientation-Aware Network for Solar Filament Segmentation
 
-![Orientation Field](./latex/images/orientation_field.svg)
-
 This repository contains a solution submitted to the [Solar Filament Segmentation Challenge 2026](https://kaggle.com/competitions/filament-segmentation-2026), a Kaggle competition organized by the Earth-Space AI Research (ESAIR) Lab. The challenge consists of the automatic segmentation of solar filaments in GONG H-alpha observations and uses the MAGFiLO dataset.
 
 The submitted model is CompassNet. **The repository includes the source code, trained weights, a notebook containing the entire pipeline, and a list of required packages.** For installation, you can either use `requirements.txt` or the Pixi environment defined in `pixi.toml`.
@@ -73,3 +71,5 @@ Before the supervised training, the ResNet-34 backbone was evaluated with two se
 - **Method:** Distillation-based SSL using the [LightlyTrain](https://github.com/lightly-ai/lightly-train) framework.
 - **Training:** 300 epochs starting from ImageNet weights (`IMAGENET1K_V1`)
 - **Code:** `src/PretrainingLightlyTrain.py`
+
+![Orientation Field](./latex/images/grid.png)
