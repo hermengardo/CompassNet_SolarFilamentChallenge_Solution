@@ -1,5 +1,7 @@
 # CompassNet: Orientation-Aware Network for Solar Filament Segmentation
 
+![Orientation Field](./latex/images/grid.png)
+
 This repository contains a solution submitted to the [Solar Filament Segmentation Challenge 2026](https://kaggle.com/competitions/filament-segmentation-2026), a Kaggle competition organized by the Earth-Space AI Research (ESAIR) Lab. The challenge consists of the automatic segmentation of solar filaments in GONG H-alpha observations and uses the MAGFiLO dataset.
 
 The submitted model is CompassNet. **The repository includes the source code, trained weights, a notebook containing the entire pipeline, and a list of required packages.** For installation, you can either use `requirements.txt` or the Pixi environment defined in `pixi.toml`.
@@ -10,15 +12,26 @@ The final weights are stored in `models/cnet@2048x567.pt`.
 
 Magfilo data is not included in this repository, so you will need to configure the paths manually. Setting the paths in the `Config` class is sufficient.
 
-## Validation results
+## Reproducing the submission
 
-Evaluated with `self-evaluation-notebook.ipynb`.
+1. `pip install -r requirements.txt` or use `pixi install` (Python >= 3.14)
+2. Download the competition data and set the paths in the `Config` cell of `training.ipynb`.
 
-| Metric | CompassNet |
-| --- | --- |
-| Panoptic Quality (PQ) | 0.42 |
-| Mean IoU | 0.52 |
-| Mean Dice | 0.65 |
+The training cell in the notebook runs only 1 epoch, as a demo. The real training (100 epochs) at the giving configuration of the report produced the stored weights.
+
+## Pretraining
+
+Before the supervised training, the ResNet-34 backbone was evaluated with two self-supervised learning (SSL) strategies on 5,000 GONG images outside the MAGFiLO period (avoiding data leakage):
+
+### 1. Masked Image Completion (`models/MaskedSSL.pt`)
+- **Method:** Reconstructs randomly masked image regions with an auxiliary loss predicting the multi-scale orientation field extracted by Kirsch filters.
+- **Training:** Up to 50 epochs starting from ImageNet weights (`IMAGENET1K_V1`).
+- **Code:** `src/Pretraining.py`
+
+### 2. Self-Supervised Distillation (`models/DistilSSL.pt`)
+- **Method:** Distillation-based SSL using the [LightlyTrain](https://github.com/lightly-ai/lightly-train) framework.
+- **Training:** 300 epochs starting from ImageNet weights (`IMAGENET1K_V1`)
+- **Code:** `src/PretrainingLightlyTrain.py`
 
 ## Directory Tree
 
@@ -51,25 +64,4 @@ Evaluated with `self-evaluation-notebook.ipynb`.
 └── requirements.txt          # Python dependencies and exact package versions
 ```
 
-## Reproducing the submission
 
-1. `pip install -r requirements.txt` or use `pixi install` (Python >= 3.14)
-2. Download the competition data and set the paths in the `Config` cell of `training.ipynb`.
-
-The training cell in the notebook runs only 1 epoch, as a demo. The real training (100 epochs) at the giving configuration of the report produced the stored weights.
-
-## Pretraining
-
-Before the supervised training, the ResNet-34 backbone was evaluated with two self-supervised learning (SSL) strategies on 5,000 GONG images outside the MAGFiLO period (avoiding data leakage):
-
-### 1. Masked Image Completion (`models/MaskedSSL.pt`)
-- **Method:** Reconstructs randomly masked image regions with an auxiliary loss predicting the multi-scale orientation field extracted by Kirsch filters.
-- **Training:** Up to 50 epochs starting from ImageNet weights (`IMAGENET1K_V1`).
-- **Code:** `src/Pretraining.py`
-
-### 2. Self-Supervised Distillation (`models/DistilSSL.pt`)
-- **Method:** Distillation-based SSL using the [LightlyTrain](https://github.com/lightly-ai/lightly-train) framework.
-- **Training:** 300 epochs starting from ImageNet weights (`IMAGENET1K_V1`)
-- **Code:** `src/PretrainingLightlyTrain.py`
-
-![Orientation Field](./latex/images/grid.png)
