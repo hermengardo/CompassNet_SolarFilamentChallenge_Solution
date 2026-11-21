@@ -10,29 +10,6 @@ The pipeline is also publicly available on Kaggle: [Orientation-Aware Net for Fi
 
 The final weights are stored in `models/cnet@2048x567.pt`.
 
-Magfilo data is not included in this repository, so you will need to configure the paths manually. Setting the paths in the `Config` class is sufficient.
-
-## Reproducing the submission
-
-1. `pip install -r requirements.txt` or use `pixi install` (Python >= 3.14)
-2. Download the competition data and set the paths in the `Config` cell of `training.ipynb`.
-
-The training cell in the notebook runs only 1 epoch, as a demo. The real training (100 epochs) at the giving configuration of the report produced the stored weights.
-
-## Pretraining
-
-Before the supervised training, the ResNet-34 backbone was evaluated with two self-supervised learning (SSL) strategies on 5,000 GONG images outside the MAGFiLO period (avoiding data leakage):
-
-### 1. Masked Image Completion (`models/MaskedSSL.pt`)
-- **Method:** Reconstructs randomly masked image regions with an auxiliary loss predicting the multi-scale orientation field extracted by Kirsch filters.
-- **Training:** Up to 50 epochs starting from ImageNet weights (`IMAGENET1K_V1`).
-- **Code:** `src/Pretraining.py`
-
-### 2. Self-Supervised Distillation (`models/DistilSSL.pt`)
-- **Method:** Distillation-based SSL using the [LightlyTrain](https://github.com/lightly-ai/lightly-train) framework.
-- **Training:** 300 epochs starting from ImageNet weights (`IMAGENET1K_V1`)
-- **Code:** `src/PretrainingLightlyTrain.py`
-
 ## Directory Tree
 
 ```
